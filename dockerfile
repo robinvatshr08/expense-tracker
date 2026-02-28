@@ -8,6 +8,5 @@ RUN mvn clean install -DskipTests=true
 FROM eclipse-temurin:17-jdk-jammy
 WORKDIR /app
 COPY --from=builder /app/target/*.jar /app/expenseapp.jar
-EXPOSE 8080
 CMD ["java","-jar","expenseapp.jar"]
 
